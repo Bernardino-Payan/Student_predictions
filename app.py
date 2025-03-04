@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request, jsonify
 import joblib
 import numpy as np
@@ -6,15 +7,12 @@ import numpy as np
 model = joblib.load("student.pkl")
 encoder = joblib.load("student_encoder.pkl")
 
-
 # Initialize Flask app
 app = Flask(__name__)
-
 
 @app.route("/")
 def home():
     return render_template("index.html")
-
 
 @app.route("/predict", methods=["POST"])
 def predict():
@@ -36,9 +34,7 @@ def predict():
     except Exception as e:
         return jsonify({"error": str(e)})
 
-
+# Run the app correctly for both local and Heroku deployment
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
+    port = int(os.environ.get("PORT", 5000))  # Use Heroku's assigned port
     app.run(host="0.0.0.0", port=port)
-
-
