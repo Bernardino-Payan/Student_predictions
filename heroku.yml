@@ -1,6 +1,5 @@
-echo "build:
+build:
   docker:
     web: docker://bernardinopayan/student-prediction
 run:
-  web: docker run -p \$PORT:5000 bernardinopayan/student-prediction
-" > heroku.yml
+  web: docker run -p $PORT:5000 bernardinopayan/student-prediction
