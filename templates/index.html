@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Race/Ethnicity Prediction</title>
+</head>
+<body>
+    <h2>Enter Student Scores to Predict Race/Ethnicity</h2>
+    <form action="/predict" method="post">
+        <label>Math Score:</label>
+        <input type="number" name="math_score" required><br><br>
+
+        <label>Reading Score:</label>
+        <input type="number" name="reading_score" required><br><br>
+
+        <label>Writing Score:</label>
+        <input type="number" name="writing_score" required><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>
